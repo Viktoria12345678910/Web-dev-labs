@@ -1,0 +1,48 @@
+body {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+}
+img {
+	width: 20px;
+	height: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+
+.lists ul {
+	margin-top: 10px;
+	margin-left: 0;
+}
+
+.lists ul li {
+	padding-left: 35px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	margin-bottom: 8px;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+/* Winter months - snowflake */
+.winter li {
+	background-image: url('snowflake_16.png');
+}
+
+/* Spring months - clover */
+.spring li {
+	background-image: url('leaf_g.png');
+}
+
+/* Summer months - sun */
+.summer li {
+	background-image: url('sun.png');
+}
+
+/* Autumn months - maple leaf */
+.autumn li {
+	background-image: url('leaf_y.png');
+}

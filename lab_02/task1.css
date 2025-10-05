@@ -1,0 +1,26 @@
+body{
+	color: white;
+	font-size: 300%;
+	background-color: #FFB09C; 
+}
+ol {
+	margin: 10px; 
+	list-style: 
+}
+li{
+
+	background-color: #bf4342;
+	margin: 20px;
+	margin-left: 100px;
+
+	
+}
+div {
+	background-color: #bf4342;
+	margin: 20px;
+	margin-left: 100px;
+}
+span{
+	background-color: #4f000b;
+	margin:50px;
+}

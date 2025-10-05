@@ -1,0 +1,21 @@
+body{
+	margin: 0px;
+	font-size: 1.8em;
+	/*text-align: center;*/
+}
+.cross {
+	color: red;
+}
+.Done {
+	background-color: #e0e1dd;
+	padding: 20px;
+	text-decoration: line-through;
+}
+.One {
+	background-color: #415a77;
+	padding: 20px;
+}
+.Two {
+	background-color: #778da9;
+	padding: 20px;
+}
