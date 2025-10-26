@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повідомлення сервера</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        caption {
+            caption-side: top;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            color: #333;
+        }
+
+        thead {
+            background: linear-gradient(to bottom, #5b9bd5, #4a8bc2);
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #e8f2fb;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #d4e7f7;
+        }
+
+        tbody tr:hover {
+            background-color: #b8d6f0 !important;
+            cursor: pointer;
+        }
+
+        td {
+            padding: 10px 12px;
+            color: #333;
+        }
+
+        .id-column {
+            color: #4a8bc2;
+            font-weight: bold;
+        }
+
+        .date-column {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .badge-bug {
+            background-color: #5b9bd5;
+        }
+
+        .badge-email {
+            background-color: #5b9bd5;
+        }
+
+        .badge-mobile {
+            background-color: #e74c3c;
+        }
+
+        .badge-user {
+            background-color: #3498db;
+        }
+
+        .priority {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .priority-blue {
+            background-color: #4a8bc2;
+        }
+
+        .priority-green {
+            background-color: #27ae60;
+        }
+
+        .priority-red {
+            background-color: #e74c3c;
+        }
+
+        .priority-orange {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <caption>Повідомлення сервера</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Created at</th>
+                <th>Size</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="id-column">#1078</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 1/26/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 22, 2024<br>10:15</td>
+                <td><span class="badge badge-bug">Bug</span></td>
+                <td><span class="priority priority-blue">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#2034</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 1/26/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 21, 2024<br>12:10</td>
+                <td><span class="badge badge-email">Email</span></td>
+                <td><span class="priority priority-green">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#1165</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 28/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 20, 2024<br>14:30</td>
+                <td><span class="badge badge-mobile">Mobile</span></td>
+                <td><span class="priority priority-red">!!</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#2214</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 18/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 19, 2024<br>12:00</td>
+                <td><span class="badge badge-user">User</span></td>
+                <td><span class="priority priority-blue">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#2345</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 18/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 17, 2024<br>08:30</td>
+                <td><span class="badge badge-bug">Bug</span></td>
+                <td><span class="priority priority-blue">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#3277</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 17/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 16, 2024<br>15:20</td>
+                <td><span class="badge badge-mobile">Mobile</span></td>
+                <td><span class="priority priority-green">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#3508</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 16/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 15, 2024<br>10:35</td>
+                <td><span class="badge badge-email">Email</span></td>
+                <td><span class="priority priority-orange">i</span></td>
+            </tr>
+            <tr>
+                <td class="id-column">#3544</td>
+                <td>Allow emailing within the system<br><span class="date-column">Updated at 15/01/2024</span></td>
+                <td>Development</td>
+                <td class="date-column">January 15, 2024<br>09:45</td>
+                <td><span class="badge badge-email">Email</span></td>
+                <td><span class="priority priority-red">!!</span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

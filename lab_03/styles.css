@@ -1,0 +1,28 @@
+.table td, .table th{
+	border: 1px solid ;
+	border-color: #6395ff;
+	padding-top: 5px;
+	word-wrap: break-word;
+	padding-right: 10px;
+	display: table-cell;
+}
+.table{
+	display: table;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+.table thead{
+	background-color: #dae1f8;
+}
+
+.table tfoot{
+	background-color: #5776b1;
+	color: #fff;
+	text-align: right;
+
+}
+.table .group{
+	background-color: #dae1f8;
+	text-align: center;
+}
