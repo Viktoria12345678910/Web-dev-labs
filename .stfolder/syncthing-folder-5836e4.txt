@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: pemr5-thr2g
+created: 2025-11-02T21:19:09+02:00
