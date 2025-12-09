@@ -1,0 +1,16 @@
+body {
+	background-image: img/bookshelve.jpg
+}
+.parent {
+	position: relative;
+	top: 0;
+	left : 0;
+}
+.img {
+	width: 200px; 
+	height: 300px;
+	position: relative;
+	top: 0;
+	left: 0;
+	border: pink;
+}
