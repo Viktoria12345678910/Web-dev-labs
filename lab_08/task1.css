@@ -1,0 +1,101 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .main-content {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .info-block {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* До 600px - всі блоки в колонку */
+        @media (min-width: 600px) {
+            .content {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .main-content {
+                flex: 1 1 100%;
+            }
+
+            .sidebar {
+                flex: 1 1 45%;
+            }
+
+            .info-block {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* Понад 960px - sidebar зліва, main по центру, info справа */
+        @media (min-width: 960px) {
+            .content {
+                flex-wrap: nowrap;
+            }
+
+            .sidebar {
+                flex: 0 0 200px;
+                order: 1;
+            }
+
+            .main-content {
+                flex: 1;
+                order: 2;
+            }
+
+            .info-block {
+                flex: 0 0 200px;
+                order: 3;
+            }
+        }

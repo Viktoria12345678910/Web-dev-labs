@@ -1,0 +1,47 @@
+body{
+	margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+}
+
+cuirtan {
+	width: 50px;
+        height: 50px;
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+}
+ .left, .right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #667eea;
+            transition: transform 2s;
+        }
+
+.left {
+        left: 0;
+        transform-origin: left;
+}
+
+.right {
+        right: 0;
+        transform-origin: right;
+}
+
+.curtain:hover .left {
+        transform: rotateY(-90deg);
+}
+
+.curtain:hover .right {
+        transform: rotateY(90deg);
+}
+
+

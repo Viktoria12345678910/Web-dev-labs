@@ -1,0 +1,44 @@
+body{
+	text-align: center;
+	background-color: #d99694;
+}
+
+.clock{
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+	border-radius: 50%;
+	border-style: solid;
+	border-color: pink;
+}
+.min, .hour{
+	width: 10px;
+	border-radius: 10px;
+	background-color: white;
+	line-height: 45px;
+	position: relative;
+	left: 50%;
+	transform-origin: bottom;
+
+}
+.min{
+	height: 240px;
+	animation: min_animation 10s linear infinite;
+}
+.hour{
+	height: 180px;
+	top: -35%;
+	animation: min_animation 600s linear infinite;
+
+}
+.point{
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+}
+
+@keyframes min_animation{
+	from{transform:rotateZ(0deg);}
+	to{transform:rotateZ(360deg);}
+
+}
