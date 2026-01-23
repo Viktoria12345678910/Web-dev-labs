@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Carousel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+
+    <h2 class="text-center mb-4">Приклад каруселі Bootstrap</h2>
+
+    <!-- Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Індикатори -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0"
+                    class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Слайди -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/chicago.jpg"
+                     class="d-block w-100"
+                     alt="Слайд 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Чікаго</h5>
+                    <p>в джазі тільки дівчата🎹🎷🥁🎼𓀤𓀥⋆☕︎ ˖</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/la.jpg"
+                     class="d-block w-100"
+                     alt="Слайд 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>LA</h5>
+                    <p>my sister went to la and now she is gay🫢</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/ny.jpg"
+                     class="d-block w-100"
+                     alt="Слайд 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>New York</h5>
+                    <p>Rent higher than buildings apartments are in💵💸🤑💰💲</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки керування -->
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Попередній</span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Наступний</span>
+        </button>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

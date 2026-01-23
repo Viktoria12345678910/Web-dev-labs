@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Modal з формою</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5">
+
+<!-- Кнопка для відкриття модального вікна -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Відкрити форму
+</button>
+
+<!-- Модальне вікно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Заголовок -->
+            <div class="modal-header">
+                <h5 class="modal-title">Форма зворотного зв’язку</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Тіло модального вікна -->
+            <div class="modal-body">
+                <form>
+                    <!-- Ім'я -->
+                    <div class="mb-3">
+                        <label class="form-label">Ім'я</label>
+                        <input type="text" class="form-control" placeholder="Введіть ім'я">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="name@example.com">
+                    </div>
+
+                    <!-- Випадаючий список -->
+                    <div class="mb-3">
+                        <label class="form-label">Тема звернення</label>
+                        <select class="form-select">
+                            <option selected>Оберіть тему</option>
+                            <option>Питання</option>
+                            <option>Пропозиція</option>
+                            <option>Скарга</option>
+                        </select>
+                    </div>
+
+                    <!-- Повідомлення -->
+                    <div class="mb-3">
+                        <label class="form-label">Повідомлення</label>
+                        <textarea class="form-control" rows="4"
+                                  placeholder="Ваше повідомлення"></textarea>
+                    </div>
+
+                    <!-- Чекбокс -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="agree">
+                        <label class="form-check-label" for="agree">
+                            Погоджуюсь з умовами
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Нижня частина -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Скасувати
+                </button>
+                <button type="button" class="btn btn-success">
+                    Надіслати
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
