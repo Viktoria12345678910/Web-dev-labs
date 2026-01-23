@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hard drive</title>
+  <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+
+	<!-- Open Modal Button -->
+	<a href="#modal" class="open-btn">Open Modal</a>
+
+	<!-- Modal -->
+	<div id="modal" class="modal">
+	<div class="modal-content">
+	<div class =" modal-header">
+		<a href="#" class="close-btn">&times;</a>
+
+		<h2 class = "title">Hard drive</h2>
+		<br>
+		<br>
+	</div>
+		<img src = "dc06c56f.gif" class = "devider">
+		<form>
+			<div class="image-preview">
+			        <span>No image</span>
+			</div>
+			<label for="img"> Зображення </label>
+			<input type="file" name="img">
+
+			<br>
+			<label for="manufacturer"> Виробник/модель </label><br>
+			<input type = "text" name="manufacturer"><br>
+
+			<br>
+			<label for="type"> Тип </label><br>
+			<label>
+				<input type="radio" name="type" placeholder = "Зовнішній">
+				Зовнішній
+			</label><br>
+			<label>
+				<input type="radio" name="type">
+				Внутрішній
+			</lable><br>
+
+			<br>
+			<lable for="capacity"> Обсяг, Гб <lable><br>
+			<input type="number" name="capacity"><br>
+
+			<br>
+			<lable for="interface"> Інтерфейс підключення</lable><br>
+			<select id="interface" name="interface">
+				<option value="">SATA</option>
+				<option value="">SAS</option>
+				<option value="">M.2</option>
+				<option value="">mSATA</option>
+				<option value="">U.2</option>
+				<option value="">PCIe</option>
+				<option value="">FC</option>
+				<option value="">IDE/ATA/PATA</option>
+				<option value="">SCSI</option>
+				<option value="">SCSI</option>
+			</select>
+			<br>
+
+			<br>
+			<lable for="size"> Форм-фактор, дюймів </lable><br>
+			<input type="number" name="size"><br>
+
+			<br>
+			<lable for="speed"> Швидкість обертання, об/хв </lable><br>
+			<input type="number" name="speed"><br>
+			
+			<br>
+			<button class="confirm-btn">Confirm</button>
+
+
+	</div>
+	</div>
+
+</body>
+</html>
+ 
+

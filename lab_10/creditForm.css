@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card-container {
+  background-color: #b6dcdc;
+  width: 420px;
+  padding-bottom: 30px;
+}
+
+.card-header {
+  background-color: #e26f1e;
+  color: #fff;
+  padding: 14px 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.card-form {
+  padding: 25px 30px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #4a6b6b;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6fa3a3;
+  background: transparent;
+  padding: 8px 4px;
+  font-size: 15px;
+  color: #355;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #7fa9a9;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group.small {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card-container {
+    width: 90%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+

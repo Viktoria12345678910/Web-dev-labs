@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Registration Form</title>
+	<link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+	<form>
+
+		<div class="form-section registration-form">
+    		<h3>Registration form</h3>
+
+    		<div class="input-group">
+      		<!-- user icon -->
+      		<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.6 0-10.8 1.8-10.8 5.4v2.4h21.6v-2.4c0-3.6-7.2-5.4-10.8-5.4z"/></svg>
+      		<input type="text" placeholder="Username" />
+    		</div>
+
+		<div class="input-group">
+      		<!-- email icon -->
+      		<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      		<input type="email" placeholder="Email address" />
+    		</div>
+
+    		<div class="two-cols">
+      		<div class="input-group">
+        	<!-- lock icon -->
+        	<svg viewBox="0 0 24 24"><path d="M12 17a2 2 0 002-2v-3a2 2 0 10-4 0v3a2 2 0 002 2zm6-7h-1V7a5 5 0 00-10 0v3H6a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2zm-6-3a3 3 0 013 3v3H9v-3a3 3 0 013-3z"/></svg>
+        	<input type="password" placeholder="Password" />
+		</div>
+      		<div class="input-group">
+        	<!-- lock icon -->
+        	<svg viewBox="0 0 24 24"><path d="M12 17a2 2 0 002-2v-3a2 2 0 10-4 0v3a2 2 0 002 2zm6-7h-1V7a5 5 0 00-10 0v3H6a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2zm-6-3a3 3 0 013 3v3H9v-3a3 3 0 013-3z"/></svg>
+        	<input type="password" placeholder="Confirm password" />
+      		</div>
+    		</div>
+
+    		<label class="checkbox-group">
+      		<input type="checkbox" />
+      		I want to receive news and special offers
+    		</label>
+    		<label class="checkbox-group">
+      		<input type="checkbox" />
+      I agree with the Terms and Conditions
+    </label>
+  </div>
+
+  <div class="form-section personal-details">
+    <h3>Personal details</h3>
+
+    <div class="two-cols" style="gap:20px;">
+      <div class="input-group" style="flex:1;">
+        <input type="text" placeholder="First name" />
+      </div>
+      <div class="input-group" style="flex:1;">
+        <input type="text" placeholder="Last name" />
+      </div>
+    </div>
+
+    <div class="two-cols" style="margin-top: 20px; gap: 20px;">
+      <select>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input type="date" placeholder="mm/dd/yyyy" />
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">SUBMIT</button>
+</form>
+
+</body>
+</html>
+
