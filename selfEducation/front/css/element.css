@@ -1,0 +1,40 @@
+.element {
+    background-color: #f1f1f1;
+    width: 260px;
+    margin: 10px;
+    text-align: center;
+    /* line-height: 400px; */
+    /* font-size: 30px; */
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+.element-img {
+    width: 230px;
+    height: 230px;
+    /* padding: 10px; */
+    border-radius: 10px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.element-data {
+    text-align: center;
+}
+
+.element-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.element-text{
+    font-size: 0.9em;
+    /* padding-bottom: 5px; */
+}
+.element-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 36px 10px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мур</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!-- Стиль називання класів із використанням подвійних нижніх підкреслень (__) 
+     називається BEM (Block, Element, Modifier). 
+    Це методологія для створення зрозумілих і масштабованих CSS-класів. 
+    - Block (Блок) — автономний компонент інтерфейсу, наприклад: <div class="header"></div>
+    - Element (Елемент) — частина блоку, яка не може існувати поза ним. 
+        для елемента використовується подвійне підкреслення (__): <div class="header">
+                                                                        <nav class="header__nav"></nav>
+                                                                    </div>
+    - Modifier (Модифікатор) — стан або варіант блоку чи елемента. 
+        Для модифікатора використовується одинарне підкреслення (_)
+                                                <div class="header header_dark">
+                                                    <nav class="header__nav header__nav_active"></nav>
+                                                </div>
+    -->
+
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__logo">Logo</div>
+            <ul class="header__menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero__title">Що таке МУР?</h1>
+        <p class="hero__description">Ніхто не пояснить краще ніж самі МУР!</p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/XixPUEzG1Tk?si=Wxz47QVe2SaHyt2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section class="services">
+            <h2 class="services__title">Найпопулярніше</h2>
+            <div class="services__list">
+                <div class="service">
+			<h3>Ти(романтика</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/AHxhKPp6xAk?si=iGgn69z8WC7XArFl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<p>Це перший історичний реп мюзикл в Україні. В ньому ми чуємо історію митців розстріляного відродження. Як Тичина був зламаний радянським тоталітаризмом, як сосюра воював за УНР.
+			Як усі їхні долі об'єдналися в будинк в Харкові на вулиці Барачній. Той будинок був майже ритуальний за кількістю поминок.</p>
+			<h3> Перший екранізований м'юзикл в Україні </h3>
+			<img class = "poster" src = "./images/Постер_МУР.jpg" >
+
+			<p>yap yap yap yap yap yap yap</p>
+                </div>
+		<div class = "service">
+			<h3>PAX ROMANA</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/51btApK4gyM?si=VAOCntlwZWPrCPZ3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<p>yap yap yap yap </p>
+		</div>
+		<div class = "service">
+			<h3>Ребелія</h3>
+			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hBIgw6-WVCI?si=b3nwJmiahrxIEf9i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<p>yap yap yap yap yap </p>
+		</div>
+
+            </div>
+    </section>
+
+    <footer class="footer">
+        <p></p>
+    </footer>
+</body>
+
+</html>
