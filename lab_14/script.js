@@ -17,7 +17,6 @@ let m = 1;
 //через for
 for (let i of arr){
 	m *=i; 	
-	console.log(m);
 }
 multDisplay.textContent += m;
 //через while
@@ -27,3 +26,12 @@ while (i < arr.lenght - 1){
 	i++
 }
 
+//task3
+function findMin(){
+	let min = arguments[0];
+	for (argument of arguments){
+		if (argument < min){
+			min = argument;
+		}
+
+}
