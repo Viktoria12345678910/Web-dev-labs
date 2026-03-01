@@ -401,6 +401,7 @@ const createCard = (product) => {
 	const shoppingCart = document.createElement("div");
 	shoppingCart.classList.add("fa");
 	shoppingCart.classList.add("fa-shopping-cart");
+	shoppingCart.setAttribute("data-id", product.id);
 
 	bottomRow.appendChild(price);
 	bottomRow.appendChild(shoppingCart);
@@ -455,6 +456,11 @@ products.map((product) => {
 	console.log('product with id: '+product.id+' created');
 })
 
-function addToCart(id){
-	console.log("product with id " + id);
+function addToCart(event1){
+	if(event1.target.classList.contains("fa")){
+		let No = event1.target.dataset.id;
+		console.log("product with id: " + No);
+	}
 }
+
+cards.addEventListener('click', addToCart);
