@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+	<title> Task 1</title>
+</head>
+<body>
+<!-- TASK 1 -->
+  <div class="task">
+    <div class="task-header">
+      <div class="task-num">1</div>
+      <h2>Валідація номера банківської карти</h2>
+    </div>
+    <p class="desc">16 цифр, починається з 4 або 5.</p>
+    <div class="input-row">
+      <input type="text" id="cardInput" placeholder="Введіть номер картки..." maxlength="19">
+      <button class="btn" onclick="checkCard()">Перевірити</button>
+    </div>
+    <div class="result" id="cardResult"></div>
+    <div class="code-block">
+<span class="kw">function</span> <span class="fn">validateCard</span>(num) {<br>
+&nbsp;&nbsp;<span class="kw">const</span> regex = <span class="rx">/^[45]\d{15}$/</span>;<br>
+&nbsp;&nbsp;<span class="kw">return</span> regex.<span class="fn">test</span>(num.<span class="fn">replace</span>(<span class="rx">/\s/g</span>, <span class="str">''</span>));<br>
+}
+    </div>
+  </div>
+
+  <!-- TASK 2 -->
+  <div class="task">
+    <div class="task-header">
+      <div class="task-num">2</div>
+      <h2>Валідація електронної пошти</h2>
+    </div>
+    <p class="desc">Лише латинські літери, цифри, "_" і "-". Символ "-" не може повторюватися. Не може починатися з "_" або "-".</p>
+    <div class="input-row">
+      <input type="text" id="emailInput" placeholder="my_mail@gmail.com">
+      <button class="btn" onclick="checkEmail()">Перевірити</button>
+    </div>
+    <div class="result" id="emailResult"></div>
+    <div class="code-block">
+<span class="kw">function</span> <span class="fn">checkEmail</span>(email) {<br>
+&nbsp;&nbsp;<span class="cm">// починається з літери/цифри, тіло: літери/цифри/_/-, без --</span><br>
+&nbsp;&nbsp;<span class="kw">const</span> regex = <span class="rx">/^[A-Za-z0-9][A-Za-z0-9_]*(-[A-Za-z0-9_]+)*@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/</span>;<br>
+&nbsp;&nbsp;<span class="kw">return</span> regex.<span class="fn">test</span>(email);<br>
+}
+    </div>
+  </div>
+
+  <!-- TASK 3 -->
+  <div class="task">
+    <div class="task-header">
+      <div class="task-num">3</div>
+      <h2>Валідація URL</h2>
+    </div>
+    <p class="desc">Рядок починається з http, https або ftp, потім двокрапка і два слеші.</p>
+    <div class="url-list" id="urlList"></div>
+    <div class="input-row" style="margin-top:1rem">
+      <input type="text" id="urlInput" placeholder="Введіть URL...">
+      <button class="btn" onclick="checkCustomUrl()">Перевірити</button>
+    </div>
+    <div class="result" id="urlResult"></div>
+    <div class="code-block">
+<span class="kw">function</span> <span class="fn">isValidURL</span>(url) {<br>
+&nbsp;&nbsp;<span class="kw">const</span> regex = <span class="rx">/^(https?|ftp):\/\/.+/</span>;<br>
+&nbsp;&nbsp;<span class="kw">return</span> regex.<span class="fn">test</span>(url);<br>
+}
+    </div>
+  </div>
+
+  <!-- TASK 4 -->
+  <div class="task">
+    <div class="task-header">
+      <div class="task-num">4</div>
+      <h2>Модальне вікно реєстрації</h2>
+    </div>
+    <p class="desc">Форма реєстрації з валідацією email та підтвердженням пароля. Модальне вікно закривається по кліку на оверлеї або кнопці ×.</p>
+    <button class="btn" onclick="openModal()">Відкрити вікно реєстрації</button>
+    <div class="result" id="modalResult"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <h3>Реєстрація</h3>
+
+    <div class="form-group">
+      <label>Нікнейм:</label>
+      <input type="text" id="regNick" placeholder="username">
+      <div class="field-error" id="nickError">Поле обов'язкове</div>
+    </div>
+    <div class="form-group">
+      <label>Електронна адреса:</label>
+      <input type="email" id="regEmail" placeholder="example@domain.com">
+      <div class="field-error" id="emailError">Невірний формат email</div>
+    </div>
+    <div class="form-group">
+      <label>Пароль:</label>
+      <input type="password" id="regPass" placeholder="••••••••">
+      <div class="field-error" id="passError">Поле обов'язкове</div>
+    </div>
+    <div class="form-group">
+      <label>Підтвердження пароля:</label>
+      <input type="password" id="regPass2" placeholder="••••••••">
+      <div class="field-error" id="pass2Error">Паролі не співпадають</div>
+    </div>
+    <button class="btn" style="width:100%" onclick="submitForm()">Зареєструватися</button>
+  </div>
+</div>
+<script src="index.js"></script>
+</body>
