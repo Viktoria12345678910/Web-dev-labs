@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>eShop</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+	<header>
+		<h1>eShop</h1>
+		<button onclick="openModal()">create Product</button>
+	</header>
+
+	<div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+		<div class="modal" id="modal">
+			<h2>Create product</h2>
+			<button class="close-btn" onclick="closeModal()">&#x2715;</button>
+
+			<form id="productForm" onsubmit="saveProduct(event)" novalidate>
+					<label>Title: *</label>
+					<input type="text" id="title" />
+					<div class="error-msg" id="err-title"></div>
+					<br>
+					<label>Description: *</label>
+					<textarea id="description"></textarea>
+					<div class="error-msg" id="err-description"></div>
+					<br>
+					<label>Price: *</label>
+					<input type="number" id="price" min="0" />
+					<div class="error-msg" id="err-price"></div>
+					<br>
+					<label>Discount: *</label>
+					<input type="number" id="discount" min="0" />
+					<div class="error-msg" id="err-discount"></div>
+					<br>
+					<label>In stock:</label>
+					<input type="number" id="stock" min="0" />
+					<br>
+					<label>Brand:</label>
+					<input type="text" id="brand" />
+					<br>
+					<label>Category: *</label>
+					<select id="category">
+						<option value="">-- select --</option>
+						<option value="Smartphones">Smartphones</option>
+						<option value="Laptops">Laptops</option>
+						<option value="Fragrances">Fragrances</option>
+						<option value="Accessories">Accessories</option>
+					</select>
+					<div class="error-msg" id="err-category"></div>
+					<br>
+					<label>Link to picture: *</label>
+					<input type="url" id="image" placeholder="https://..." />
+					<div class="error-msg" id="err-image"></div>
+
+				<button type="submit" class="save-btn">Save Product</button>
+			</form>
+		</div>
+	</div>
+	<div id="cards"></div>
+	<script src="index.js"></script>
+
+</body>
+</html>
