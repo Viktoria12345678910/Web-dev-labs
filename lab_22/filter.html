@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<title>Filter and search</title>
+	<link rel="stylesheet" href="filter.css">
+</head>
+<body>
+	<form>
+		<label for="filters">Пошук та фільтрація</label>
+		<select name = "filters">
+			<option value="">--All categories--</option>
+			<option value="smartphones">smartphones</option>
+			<option value="laptops">laptops</option>
+			<option value="audio">audio</option>
+			<option value="tablets">tablets</option>
+			<option value="accessories">accessories</option>
+		</select>
+		<input type = "text" placeholder="--search product--" name="filters">
+		<select name = "filters">
+			<option value="">--sort products(Don't sort)--</option>
+			<option value="by increasing price">by increasing price</option>
+			<option value="by decreasing price">by decreasing price</option>
+			<option value="newest first">newest first</option>
+			<option value="oldest first">oldest first</option>
+		</select>
+	</form>
+	<div id="cards"></id>
+	<script src="filter.js"></script>
+</body>
