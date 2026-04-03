@@ -17,6 +17,7 @@
 			<h2>Create product</h2>
 			<button class="close-btn" onclick="closeModal()">&#x2715;</button>
 
+			<p id="confirm" class="deletion"></p>
 			<form id="productForm" onsubmit="saveProduct(event)" novalidate>
 					<label>Title: *</label>
 					<input type="text" id="title" />
@@ -53,8 +54,10 @@
 					<label>Link to picture: *</label>
 					<input type="url" id="image" placeholder="https://..." />
 					<div class="error-msg" id="err-image"></div>
+					
 
-				<button type="submit" class="save-btn">Save Product</button>
+					<button class="save-btn" style="background: red;"id="cancel-btn" onclick="closeModal()">Cancel</button>
+				<button type="submit" class="save-btn" id="save-btn">Save Product</button>
 			</form>
 		</div>
 	</div>

@@ -235,14 +235,22 @@ header button:hover {
     margin-left: 2px;
   }
 
-  .fa{
+  .fa-regular{
   color: blue;
   }
 
   #cards{
   	display: grid;
   	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  	gap: 2rem;
+  	gap: 52px;
   	padding: 1.5rem;
 	width:100%;
+  }
+
+  .fa-trash-can{
+  	color: blue
+}
+
+  .deletion{
+  color: red;
   }
