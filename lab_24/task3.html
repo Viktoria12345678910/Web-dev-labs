@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	<title> div before h3</title>
+</head>
+<body>
+	<h3>header1</h3>
+	<div>text1</div>
+	<h3>header2</h3>
+	<div>text2</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		$('h3').next('div').each(function() {
+   			$(this).insertBefore($(this).prev('h3'));
+		});
+	</script>
+</body>
