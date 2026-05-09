@@ -1,19 +1,16 @@
 "use strict"
 const express = require('express');
 const app = express();
+const connect = require('./db/connection');
+const productRouter = require('./routs/productRouter');
+const authRouter = require('./routs/authRouter');
+
+connect();
 const PORT = 3000;
 app.use(express.static('public'));
 app.use(express.json());
-
-const fs = require('fs');
-
-app.use((req, res, next) => {
-  const log = `${new Date().toISOString()} ${req.method} ${req.url}\n`;
-  fs.appendFile('log.txt', log, (err) => {
-    if (err) console.log(err);
-  });
-  next(); // important! moves to the next route
-});
+app.use('/product', productRouter);
+app.use('/auth', authRouter);
 
 app.get('/product/list', (req, res)=>{
 	res.json({message: 'product list'});
