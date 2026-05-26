@@ -9,4 +9,4 @@ router.post('/create', verifyToken, adminOnly, controller.create);
 router.put(':id', verifyToken, adminOnly, controller.update);
 router.delete('/:id', verifyToken, adminOnly, controller.remove);
 
-module exports = router;
+module.exports = router;
