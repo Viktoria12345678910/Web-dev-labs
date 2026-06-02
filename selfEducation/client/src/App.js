@@ -7,6 +7,7 @@ import CoursePage from './pages/CoursePage';
 import Reading from './pages/Reading';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import './App.css';
 
 // Захищений роут — якщо не авторизований, редірект на /login
 function PrivateRoute({ children }) {
