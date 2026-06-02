@@ -3,7 +3,7 @@ const Note = require('../models/Notes');
 const { authMiddleware } = require('./auth');
 
 // GET нотатки до курсу
-router.get('/:courseId', authMiddleware, async (req, res) => {
+router.get('/:courseId', async (req, res) => {
   try {
     const notes = await Note.find({
       courseId: req.params.courseId,

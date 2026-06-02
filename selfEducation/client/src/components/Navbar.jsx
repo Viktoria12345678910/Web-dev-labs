@@ -6,15 +6,26 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <span className="logo">📚 LearnSpace</span>
+      <span className="logo">SelfEducation</span>
       <div className="nav-links">
-        <NavLink to="/">Профіль</NavLink>
         <NavLink to="/courses">Курси</NavLink>
-        <NavLink to="/reading">Читання</NavLink>
-        <span style={{ color: '#aaa', fontSize: '0.9rem' }}>
-          {user?.displayName || user?.username}
-        </span>
-        <button onClick={logout}>Вийти</button>
+	  {user && (
+		  <>
+        		<NavLink to="/">Профіль</NavLink>
+        		<NavLink to="/reading">Читання</NavLink>
+		  	<NavLink to="/notes">Нотатки</NavLink>
+        			<span style={{ color: '#aaa', fontSize: '0.9rem', padding: '5px' }}>
+          				{user?.displayName || user?.username}
+        			</span>
+        			<button onClick={logout}>Вийти</button>
+		  </>
+	  )}
+	  {!user && (
+		  <>
+		  	<NavLink to='/login'>Увійти</NavLink>
+		  	<NavLink to='/register'>Зареєструватись</NavLink>
+		  </>
+	  )}
       </div>
     </nav>
   );

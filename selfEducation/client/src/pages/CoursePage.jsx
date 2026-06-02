@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function CoursePage() {
   const { id } = useParams();
-  const { authFetch } = useAuth();
+  const { authFetch, user } = useAuth();
   const navigate = useNavigate();
 
   const [course, setCourse] = useState(null);
@@ -16,7 +16,7 @@ export default function CoursePage() {
 
   const fetchCourse = async () => {
     try {
-      const res = await authFetch(`/api/courses/${id}`);
+      const res = await fetch(`http://localhost:5000/api/courses/${id}`);
       if (!res.ok) return navigate('/courses');
       setCourse(await res.json());
     } catch {
@@ -26,7 +26,7 @@ export default function CoursePage() {
 
   const fetchNotes = async () => {
     try {
-      const res = await authFetch(`/api/notes/${id}`);
+      const res = await fetch(`http://localhost:5000/api/notes/${id}`);
       setNotes(await res.json());
     } catch {
       setError('Помилка завантаження нотаток');
@@ -99,15 +99,18 @@ export default function CoursePage() {
               </a>
             )}
           </div>
+	  {user &&(
           <button
             className={course.completed ? 'btn-secondary' : 'btn-primary'}
             onClick={handleToggleComplete}>
             {course.completed ? '↩ Позначити як незавершений' : '✅ Позначити як завершений'}
           </button>
+	  )}
         </div>
       </div>
 
       {/* ІНФО КАРТКА */}
+{user && (
       <div className="form-panel" style={{ marginBottom: '2rem' }}>
         <div className="card-meta" style={{ marginBottom: '0.75rem' }}>
           {course.completed
@@ -131,13 +134,16 @@ export default function CoursePage() {
           </>
         )}
       </div>
+)}
 
       {/* НОТАТКИ */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
         <h2>📝 Нотатки <span style={{ color: '#aaa', fontSize: '1rem' }}>({notes.length})</span></h2>
+	{user &&(
         <button className="btn-primary" onClick={() => setShowForm(!showForm)}>
           {showForm ? 'Скасувати' : '+ Додати нотатку'}
         </button>
+	)}
       </div>
 
       {/* ФОРМА НОТАТКИ — Zettelkasten стиль */}
@@ -196,9 +202,11 @@ export default function CoursePage() {
             <div key={note._id} className="note-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{note.title}</h3>
+		  {user && (
                 <button className="btn-danger" onClick={() => handleDelete(note._id)}>
                   Видалити
                 </button>
+		  )}
               </div>
               <p style={{ color: '#444', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '0.75rem' }}>
                 {note.text}

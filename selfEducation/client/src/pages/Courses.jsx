@@ -8,7 +8,7 @@ const EMPTY_FORM = {
 };
 
 export default function Courses() {
-  const { authFetch } = useAuth();
+  const { authFetch, user } = useAuth();
   const navigate = useNavigate();
 
   const [courses, setCourses] = useState([]);
@@ -23,7 +23,7 @@ export default function Courses() {
   const fetchCourses = async (p = 1) => {
     setLoading(true);
     try {
-      const res = await authFetch(`/api/courses?page=${p}&limit=6`);
+      const res = await fetch(`http://localhost:5000/api/courses?page=${p}&limit=6`);
       const data = await res.json();
       setCourses(data.data);
       setTotal(data.total);
@@ -69,52 +69,48 @@ export default function Courses() {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h1>Мої курси <span style={{ color: '#aaa', fontSize: '1rem' }}>({total})</span></h1>
+	  {user && (
         <button className="btn-primary" onClick={() => setShowForm(!showForm)}>
           {showForm ? 'Скасувати' : '+ Додати курс'}
         </button>
+	  )}
       </div>
 
       {/* ФОРМА ДОДАВАННЯ */}
-      {showForm && (
-        <div className="form-panel" style={{ marginTop: '1.5rem' }}>
-          <h3>Новий курс</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-row">
-              <input name="courseName" placeholder="Назва курсу *"
-                value={form.courseName} onChange={handleChange} required />
-              <input name="siteUrl" placeholder="Посилання на курс"
-                value={form.siteUrl} onChange={handleChange} />
-            </div>
-            <div className="form-row">
-              <input name="modules" type="number" placeholder="Кількість модулів"
-                value={form.modules} onChange={handleChange} min="0" />
-              <input name="modulesdone" type="number" placeholder="Пройдено модулів"
-                value={form.modulesdone} onChange={handleChange} min="0" />
-            </div>
-            <div className="form-row">
-              <input name="price" type="number" placeholder="Ціна (0 = безкоштовно)"
-                value={form.price} onChange={handleChange} min="0" />
-            </div>
-            <div style={{ display: 'flex', gap: '1.5rem', margin: '0.5rem 0' }}>
-              <label>
-                <input type="checkbox" name="completed"
-                  checked={form.completed} onChange={handleChange} />
-                {' '}Завершено
-              </label>
-              <label>
-                <input type="checkbox" name="certificate"
-                  checked={form.certificate} onChange={handleChange} />
-                {' '}Є сертифікат
-              </label>
-            </div>
-            <div className="form-actions">
-              <button type="submit" className="btn-primary">Зберегти</button>
-              <button type="button" className="btn-secondary"
-                onClick={() => setShowForm(false)}>Скасувати</button>
-            </div>
-          </form>
-        </div>
-      )}
+      	{showForm && (
+        	<div className="form-panel" style={{ marginTop: '1.5rem' }}>
+          		<h3>Новий курс</h3>
+          		<form onSubmit={handleSubmit}>
+            			<div className="form-row">
+              				<input name="courseName" placeholder="Назва курсу *" value={form.courseName} onChange={handleChange} required />
+              				<input name="siteUrl" placeholder="Посилання на курс" value={form.siteUrl} onChange={handleChange} />
+            			</div>
+            			<div className="form-row">
+              				<input name="modules" type="number" placeholder="Кількість модулів" value={form.modules} onChange={handleChange} min="0" />
+              				<input name="modulesdone" type="number" placeholder="Пройдено модулів" value={form.modulesdone} onChange={handleChange} min="0" />
+            			</div>
+            			<div className="form-row">
+              				<input name="price" type="number" placeholder="Ціна (0 = безкоштовно)" value={form.price} onChange={handleChange} min="0" />
+            			</div>
+            			<div style={{ display: 'flex', gap: '1.5rem', margin: '0.5rem 0' }}>
+              				<label>
+                				<input type="checkbox" name="completed" checked={form.completed} onChange={handleChange} />
+                				{' '}Завершено
+              				</label>
+              				<label>
+                				<input type="checkbox" name="certificate" checked={form.certificate} onChange={handleChange} />
+                				{' '}Є сертифікат
+              				</label>
+            			</div>
+
+            			<div className="form-actions">
+              				<button type="submit" className="btn-primary">Зберегти</button>
+              				<button type="button" className="btn-secondary" onClick={() => setShowForm(false)}>Скасувати</button>
+            			</div>
+          		</form>
+        	</div>
+      	)}
+	
 
       {/* СПИСОК КУРСІВ */}
       {error && <p className="error">{error}</p>}
@@ -160,12 +156,14 @@ export default function Courses() {
                 </a>
               )}
 
+		  {user && (
               <div style={{ marginTop: '1rem', textAlign: 'right' }}>
                 <button className="btn-danger"
                   onClick={e => handleDelete(e, course._id)}>
                   Видалити
                 </button>
               </div>
+		  )}
             </div>
           ))}
         </div>

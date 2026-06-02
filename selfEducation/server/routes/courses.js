@@ -3,11 +3,11 @@ const Course = require('../models/Course');
 const { authMiddleware } = require('./auth');
 
 // GET всі курси з пагінацією
-router.get('/', authMiddleware, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const { page = 1, limit = 6 } = req.query;
-    const total = await Course.countDocuments({ authorId: req.user.id });
-    const courses = await Course.find({ authorId: req.user.id })
+    const total = await Course.countDocuments();
+    const courses = await Course.find()
       .skip((page - 1) * limit)
       .limit(Number(limit));
     res.json({ data: courses, total, pages: Math.ceil(total / limit) });
@@ -17,9 +17,9 @@ router.get('/', authMiddleware, async (req, res) => {
 });
 
 // GET один курс
-router.get('/:id', authMiddleware, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const course = await Course.findOne({ _id: req.params.id, authorId: req.user.id });
+    const course = await Course.findOne(req.params.id);
     if (!course) return res.status(404).json({ message: 'Не знайдено' });
     res.json(course);
   } catch (err) {

@@ -8,21 +8,32 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   // При завантаженні — перевіряємо токен
-  useEffect(() => {
-    if (token) {
-      fetch('http://localhost:5000/api/auth/me', {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-        .then(res => res.ok ? res.json() : null)
-        .then(data => {
-          if (data) setUser(data);
-          else logout(); // токен протух
-        })
-        .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
+useEffect(() => {
+  if (!token) {
+    setLoading(false);
+    return;
+  }
+
+  fetch('http://localhost:5000/api/auth/me', {
+    headers: {
+      Authorization: `Bearer ${token}`
     }
-  }, [token]);
+  })
+    .then(res => (res.ok ? res.json() : null))
+    .then(data => {
+      if (data) {
+        setUser(data);
+      } else {
+        logout();
+      }
+    })
+    .catch(() => {
+      logout();
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+}, [token]);
 
   const login = (userData, newToken) => {
     localStorage.setItem('token', newToken);
@@ -42,11 +53,11 @@ export function AuthProvider({ children }) {
       ...options,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+	...(token ? { Authorization: `Bearer ${token}` } : {}),
         ...options.headers,
       },
     });
-    if (res.status === 401) logout();
+    if (res.status === 401 && token) logout();
     return res;
   };
 

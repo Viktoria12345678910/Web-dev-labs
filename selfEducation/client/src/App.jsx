@@ -1,17 +1,24 @@
+import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
+
 import Profile from './pages/Profile';
 import Courses from './pages/Courses';
 import CoursePage from './pages/CoursePage';
 import Reading from './pages/Reading';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Notes from './pages/Notes';
 
-// Захищений роут — якщо не авторизований, редірект на /login
+// Захищений роут
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
-  if (loading) return <div className="loading">Завантаження...</div>;
+
+  if (loading) {
+    return <div className="loading">Завантаження...</div>;
+  }
+
   return user ? children : <Navigate to="/login" />;
 }
 
@@ -20,29 +27,38 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      {user && <Navbar />}
+      <Navbar />
+
       <main className="container">
         <Routes>
-          {/* Публічні роути */}
+          {/* Головна */}
+          <Route
+            path="/"
+            element={user ? <Profile /> : <Courses />}
+          />
+
+          {/* Публічні */}
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:id" element={<CoursePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+	  <Route path="/notes" element= { <PrivateRoute> <Notes /> </PrivateRoute> } />
 
-          {/* Захищені роути */}
-          <Route path="/" element={
-            <PrivateRoute><Profile /></PrivateRoute>
-          } />
-          <Route path="/courses" element={
-            <PrivateRoute><Courses /></PrivateRoute>
-          } />
-          <Route path="/courses/:id" element={
-            <PrivateRoute><CoursePage /></PrivateRoute>
-          } />
-          <Route path="/reading" element={
-            <PrivateRoute><Reading /></PrivateRoute>
-          } />
+          {/* Захищені */}
+          <Route
+            path="/reading"
+            element={
+              <PrivateRoute>
+                <Reading />
+              </PrivateRoute>
+            }
+          />
 
-          {/* Якщо сторінка не знайдена */}
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* 404 */}
+          <Route
+            path="*"
+            element={<Navigate to="/courses" />}
+          />
         </Routes>
       </main>
     </BrowserRouter>
